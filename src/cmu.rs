@@ -26,7 +26,7 @@ pub trait CMUExt {
     fn constrain(self) -> Cmu;
 }
 
-impl CMUExt for registers::CMU {
+impl CMUExt for &registers::cmu::RegisterBlock {
     fn constrain(self) -> Cmu {
         Cmu { _private: () }
     }

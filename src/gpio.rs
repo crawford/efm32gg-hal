@@ -154,7 +154,7 @@ macro_rules! gpio {
             )+
         }
 
-        impl GPIOExt for registers::GPIO {
+        impl GPIOExt for &registers::gpio::RegisterBlock {
             fn split(self, mut gpioclk: cmu::GPIOClk) -> Pins {
                 // The GPIO register block gets consumed, further access only happens through the
                 // pins we're giving out.
